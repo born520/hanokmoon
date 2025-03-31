@@ -1,1 +1,537 @@
 
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>??? ??? ???</title>
+      <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+          background-color: #f0f2f5;
+          color: #333;
+          line-height: 1.6;
+        }
+        .container {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 20px;
+        }
+        .filter-container {
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        .category-filter {
+          padding: 8px 16px;
+          border-radius: 4px;
+          border: 1px solid #ddd;
+          font-size: 14px;
+          background-color: white;
+          cursor: pointer;
+          min-width: 200px;
+        }
+        .card-grid {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+        }
+        @media (min-width: 576px) {
+          .card-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 768px) {
+          .card-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (min-width: 992px) {
+          .card-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        @media (min-width: 1200px) {
+          .card-grid { grid-template-columns: repeat(5, 1fr); }
+        }
+        @media (min-width: 1400px) {
+          .card-grid { grid-template-columns: repeat(6, 1fr); }
+        }
+        .card {
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          position: relative;
+        }
+        .card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card-image-container {
+          position: relative;
+          width: 100%;
+          padding-top: 100%; /* 1:1 Aspect Ratio */
+        }
+        .card-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .card-content {
+          padding: 12px;
+        }
+        .card-title {
+          font-size: 14px;
+          font-weight: bold;
+          margin-bottom: 8px;
+          color: #333;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .card-description {
+          font-size: 12px;
+          color: #666;
+          margin-bottom: 8px;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .card-meta {
+          font-size: 11px;
+          color: #999;
+        }
+        .card-category {
+          font-size: 11px;
+          color: #0066cc;
+          margin-top: 4px;
+        }
+        .card-rss-title {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          background-color: rgba(0, 0, 0, 0.7);
+          color: #fff;
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-size: 11px;
+          font-weight: bold;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+        .header {
+          text-align: center;
+          margin-bottom: 30px;
+        }
+        .header h1 {
+          font-size: 24px;
+          margin-bottom: 10px;
+          color: #333;
+        }
+        .header p {
+          font-size: 14px;
+          color: #666;
+        }
+        .hidden {
+          display: none !important;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h1>??? ???</h1>
+          <p>??? ??? ??? ??</p>
+        </div>
+        
+        <div class="filter-container">
+          <select class="category-filter" id="categoryFilter">
+            <option value="??">??</option><option value="???? ??">???? ??</option>
+          </select>
+        </div>
+        
+        <div class="card-grid">
+  
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223342049695?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyNDAyMDJfMjI4%2FMDAxNzA2ODU1MzUzNTk0.AEoXC_JSOsnda-9HAOl_IdktlXoO9UtxzBeqpk_vmfcg.M1U-0iC-QMDRxLirxYxA9_yYtRs-kc90Oq110RWTXX8g.PNG.dy31860%2F%25C1%25D6%25BC%25AE_2024-02-02_152904.png%3Ftype%3Dw2" alt="??? ???? &lsquo;??? ??!&rsquo; ?? ??" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">??? ???? &lsquo;??? ??!&rsquo; ?? ??</h2>
+            <p class="card-description">&ldquo;??? ?? ??? ?? ???? ????? ?? ??? ??? ?? ????&rdquo; ??? ???? ?...</p>
+            <div class="card-meta">
+              <span>2024? 2? 2?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223320450830?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyNDAxMTJfMjY2%2FMDAxNzA1MDQyMjUzMTIx.2W-NS4arN_xTm4Vjog558DOdYjHr1G3dZdDEy8xU2Ikg.LRmJKBJvPIaBLc9zAaeGX07qPiS805wYH_YyybaEHcgg.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[NEWSIS] ???, '? ? ?? ??'&hellip;??? ?? ???" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[NEWSIS] ???, '? ? ?? ??'&hellip;??? ?? ???</h2>
+            <p class="card-description">"????? ??? ???? ???? ??? ? ?????" ?? [??&#x3D;???] ???...</p>
+            <div class="card-meta">
+              <span>2024? 1? 12?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223296119692?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzEyMThfMjI3%2FMDAxNzAyODY4Mjg3OTQ0.wWtwbcsHQuJMj966HPtBgmusTJUK7yIAPmswKMTZ2N8g.-wf7QoWW7sD2rL3KF-VFgATB76nwvVIAL4m1VK3fxXUg.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="??? ???? ???? ?????, ?22? ???? ?? ??????" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">??? ???? ???? ?????, ?22? ???? ?? ??????</h2>
+            <p class="card-description">??? ???? ???(?)????? ???? ?? 12? ??????????? 2024? 4? 10? ??...</p>
+            <div class="card-meta">
+              <span>2023? 12? 18?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223285708418?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzEyMDdfMjYw%2FMDAxNzAxOTMxMjY3NzEy.qDhM-wjTCCCWFkHMDI8rxP3XPDxJVLZWlFI_SsCh12Ug.nA4N-UxqDsa8KXbHPsFnvb9-FZ-3_PMoqXw8U0nqj6cg.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="??? ?? ??? ????? '?? ??' ????? '??&rsquo;" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">??? ?? ??? ????? '?? ??' ????? '??&rsquo;</h2>
+            <p class="card-description">?? ?? ??? ???? ??? ???? ???? ?????? ?? '?? ??' ????...</p>
+            <div class="card-meta">
+              <span>2023? 12? 7?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223272880768?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fphinf.pstatic.net%2Fimage.nmv%2Fblog_2023_11_23_1321%2F2f336618-89d9-11ee-8608-a0369ffb31a0_08.jpg%3Ftype%3Dw2" alt="KNN [?????] - ??? ???? ???????? ???" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">KNN [?????] - ??? ???? ???????? ???</h2>
+            <p class="card-description">KNN ????????. ?? 4? ???? ?22? ???? ??? ??? ?? ??? ???? ???...</p>
+            <div class="card-meta">
+              <span>2023? 11? 23?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223195736500?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjhfMjIz%2FMDAxNjkzMjA3NzE2NTI0.4_KheDXGlbvqxbZ9tAjj0tlcugKWZII6ME0b-Mh9j_Ag.WlzJhdBQZ_wU97CNP62MDcV4ftpNbyQnO77qWW-I-78g.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[?????] ??? ????? &quot;?? ?? ???? ???? ???? ??&quot;" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[?????] ??? ????? "?? ?? ???? ???? ???? ??"</h2>
+            <p class="card-description">?? ?? A-2&middot;A-8 ?? ?? '????' 1200? ?? ?? ??? ?? ?? ?? ?? ?? ...</p>
+            <div class="card-meta">
+              <span>2023? 8? 28?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223190157572?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjJfMTMg%2FMDAxNjkyNjcwOTQzNDg1.QNaLfYMza64cnYL8ztr7qebntBuM-Lh1kYuBl-JYqRcg.naQeOkCSl0-91erIDnjvnPPMp0M7ebK8qAxOTX19zD4g.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="??? ???(?) ????? &quot;??? ??(NASA) ????? ?? ?? ? ??? ?? ?? ?? &quot;" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">??? ???(?) ????? "??? ??(NASA) ????? ?? ?? ? ??? ?? ?? ?? "</h2>
+            <p class="card-description">??? ???? ?? ??? ????? ??? ?? ?? ?? 4? ?????????? '????...</p>
+            <div class="card-meta">
+              <span>2023? 8? 22?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223189314006?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjFfMjY1%2FMDAxNjkyNTk0ODQ2Njc4.AU_ibnlTy2g0uPNRtXIh0lCQtamyXB5FUfOAlSSnyLwg.e1_Nlnj54gukx1GSKELoxa1OMIBQzRZgdJqMkh4lWIsg.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[?????] ??? ???, ???? '??? ????'...&quot;??? ??? ?? ?? ???&quot;" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[?????] ??? ???, ???? '??? ????'..."??? ??? ?? ?? ???"</h2>
+            <p class="card-description">??? ???? ??? ? ?? ??? ???? ??? ???? ???? ??? ??? ?? ???? ...</p>
+            <div class="card-meta">
+              <span>2023? 8? 21?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223189312279?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjFfMTY1%2FMDAxNjkyNTk0NzQ4MTk5.Mygfi6qfTQ_ql_D5sHKnWdGJj9u6vrBqFMNSTDWDuCwg.f5BOmcu2BlYoor8II-_kKd7SkgWIvU1PyymTwF0klNYg.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[??????] ???? ??? ? ??? ?????, ??? ?? ??" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[??????] ???? ??? ? ??? ?????, ??? ?? ??</h2>
+            <p class="card-description">???? ??? ? ??? ?????? ??? ?? '?tv ???? ???'? ???? ?? ...</p>
+            <div class="card-meta">
+              <span>2023? 8? 21?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223189309349?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjFfOSAg%2FMDAxNjkyNTk0NDk2Mjky.J8LZSHuainvpSRwVfQm2QnxUIuqBSSR7fvYUYuT3vN0g.uTVqk_cbvv8t8KJWqHv_smJy05dFIXMRAUQneObnEaEg.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[????] &quot;???? ???? ?? ???&hellip;???? ?? ?? ?? ??&quot;" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[????] "???? ???? ?? ???&hellip;???? ?? ?? ?? ??"</h2>
+            <p class="card-description">??? ?? 4? 10? ???? ?22? ??????? ?? ?? ?????? ? ?? ??? ???? ...</p>
+            <div class="card-meta">
+              <span>2023? 8? 21?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223189305904?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjFfMTE3%2FMDAxNjkyNTk0MzM1MDYw.lqKVGdutYLQwT79Dvm7t61Ua4VfQHWXoW_P2Vt3nNS0g.wC3YQmUpqr-Ag13PfeXRRRM293nYcPRDkMvWFHiZdrAg.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[?????] ??? ??? &quot;????? ???...??? 2? ???? ?? ?? ????&quot;" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[?????] ??? ??? "????? ???...??? 2? ???? ?? ?? ????"</h2>
+            <p class="card-description">??? ???? ?? ?? ??????&middot;??????&middot;??? ?? ?? ???? ??? ??? ????...</p>
+            <div class="card-meta">
+              <span>2023? 8? 21?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223189303267?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjFfMjA2%2FMDAxNjkyNTk0MTkyNTE4.EQzehAvcywnMFzF6oQYFzMXgR6-4dTQLYdiT_CMCuE4g.Y8yEXR72kJ1Ax3EO5JKIxp83LXUEKfTDHBEpYqkyBb8g.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[??????] ??? ???????? ????? ???????! &quot;??? ????, ?? ?? ? ?? ??? ?? ??&quot;" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[??????] ??? ???????? ????? ???????! "??? ????, ?? ?? ? ?? ??? ?? ??"</h2>
+            <p class="card-description">??? ?????? ??? ????? ?? ??? ??? ??? ??(??)? ??(??)? ???? 7...</p>
+            <div class="card-meta">
+              <span>2023? 8? 21?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223189301421?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjFfMTk1%2FMDAxNjkyNTk0MDQ4NjAy.-VC-MW_oV0HwFsChsSHpxX5LaK-VKgZEaSLJyRQiq5cg.2__Rv1d6tc7VhOLjAuy5YDMUFmnJuUJtzO3oU4rjpAsg.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[????] ???? ???(?)??, ???? ???? ??" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[????] ???? ???(?)??, ???? ???? ??</h2>
+            <p class="card-description">?? ????, ?? ?? ?? ?? ?? ??? ?? ??&middot;?? ?? ? ?? ?? ?? ??? ??? &...</p>
+            <div class="card-meta">
+              <span>2023? 8? 21?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223189298900?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjFfMTM4%2FMDAxNjkyNTkzODg3NzYx.yx3OPFnkwstLBPDPF00cmwTS7Ik0g2sL1i6bIrX3RgQg.JEvEGlI7iw3X59ctrsAht4UVprNYA1g-VDsDYeiDlDsg.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[?????] ??? ??? &quot;?? ???? ??? ?? ??? ?? ?? ???&quot;" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[?????] ??? ??? "?? ???? ??? ?? ??? ?? ?? ???"</h2>
+            <p class="card-description">???? ??? ??, ??&middot;???&middot;??? ?? ??? ?? ??????? ?? ???...??? ? ?...</p>
+            <div class="card-meta">
+              <span>2023? 8? 21?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223189296439?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjFfMjA5%2FMDAxNjkyNTkzNzY2Mzgw.6L1JboQhdLSUtlCAQf75gMNCLw1ZoPVEDu7S4NOKBAUg.ESA_0DT294pfpwMiKDVpxxc2a_pxQaJpX20ousoSZ2Qg.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[??????] ??? ??? '?' ?????, ' ???? ??? '?????? ???? ??? ?? ??" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[??????] ??? ??? '?' ?????, ' ???? ??? '?????? ???? ??? ?? ??</h2>
+            <p class="card-description">??-??-?? ????(?? ???)? ?1? ?????(?? ??)???? ?????? ?? ???...</p>
+            <div class="card-meta">
+              <span>2023? 8? 21?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223189294754?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjFfNzQg%2FMDAxNjkyNTkzNjE5MjI0.hDUgS9hZqmRU_Rn7o6gnqhD9BX5HqW0A_0CevFZ4k-cg.OBxhjHlUJ0EfV7WcxxdfhnHyhDe-rhoX3YNRb4g9GTYg.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[??????] ??? ???? ???(?) ?????, ?? ??? ??? ??? ???!" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[??????] ??? ???? ???(?) ?????, ?? ??? ??? ??? ???!</h2>
+            <p class="card-description">???? ?????? ? '???? ????????'(?? ???)? ????. ???? ?...</p>
+            <div class="card-meta">
+              <span>2023? 8? 21?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223189292300?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjFfMjU4%2FMDAxNjkyNTkzNTI4ODMw.umJT3oaOg_FrxAdOo57UYuJDzZbmy4BeuJ6FwO9Bx9Qg.Ns_8aTTjnbmkayC7ifBqFsnG1rACoxZj82Tn40c_Qpog.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[??????] ???? ?????? ???? 600?? ??" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[??????] ???? ?????? ???? 600?? ??</h2>
+            <p class="card-description">??? ??? ?? ? ? ?? ?? ?? ???&middot;???&middot;??? ???? ?? ?? ?? ?? 1? ???...</p>
+            <div class="card-meta">
+              <span>2023? 8? 21?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="card" data-category="???? ??">
+        <a href="https://blog.naver.com/dy31860/223189270339?fromRss=true&trackingCode=rss" target="_blank">
+          <div class="card-image-container">
+            <img class="card-image" src="https://images.weserv.nl/?url=https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyMzA4MjFfMTg4%2FMDAxNjkyNTkyMTE4MjY1.NIfvttKPkPOelhaIl4uWq16EJ4tGX_zJfKWn-k0kDs0g.fO2rMsg2ZrFKXIlqSxPzaEocr6hlacHRYRHKy2o-XCog.PNG.dy31860%2Fimage.png%3Ftype%3Dw2" alt="[?????] ??? ??? ????? &quot;?? ?? ???? ???? ???? ??&quot;" loading="lazy" onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=???+??';">
+            <div class="card-rss-title">?? ???</div>
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">[?????] ??? ??? ????? "?? ?? ???? ???? ???? ??"</h2>
+            <p class="card-description">?? ?? A-2&middot;A-8 ?? ?? '????' 1200? ?? ?? ??? ?? ?? ?? ?? ?? ...</p>
+            <div class="card-meta">
+              <span>2023? 8? 21?</span>
+            </div>
+            <div class="card-category">
+              <span>???? ??</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+        </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // ??? ?? ??
+          var images = document.querySelectorAll('.card-image');
+          images.forEach(function(img) {
+            img.onerror = function() {
+              this.onerror = null;
+              this.src = 'https://via.placeholder.com/300x300?text=???+??';
+            }
+          });
+          
+          // ???? ??? ??
+          var categoryFilter = document.getElementById('categoryFilter');
+          
+          categoryFilter.addEventListener('change', function() {
+            var selectedCategory = this.value;
+            var cards = document.querySelectorAll('.card');
+            
+            cards.forEach(function(card) {
+              if (selectedCategory === '??' || card.getAttribute('data-category') === selectedCategory) {
+                card.classList.remove('hidden');
+              } else {
+                card.classList.add('hidden');
+              }
+            });
+          });
+        });
+      </script>
+    </body>
+    </html>
+  
