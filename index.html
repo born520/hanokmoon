@@ -16,11 +16,59 @@
       background-color: #f0f2f5;
       color: #333;
       line-height: 1.6;
+      display: flex;
+      justify-content: space-between;
     }
     .container {
-      max-width: 1400px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 20px;
+      flex-grow: 1;
+    }
+    .sidebar {
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+      height: 100vh;
+      position: fixed;
+    }
+    .sidebar.left {
+      left: 0;
+    }
+    .sidebar.right {
+      right: 0;
+    }
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #333;
+      text-align: center;
+    }
+    .sidebar-item {
+      margin-bottom: 15px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    }
+    .sidebar-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .sidebar-item a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      font-weight: bold;
+      display: block;
+      margin-top: 5px;
+    }
+    .sidebar-item span {
+      font-size: 12px;
+      color: #666;
     }
     .filter-container {
       margin-bottom: 20px;
@@ -49,12 +97,6 @@
     @media (min-width: 992px) {
       .card-grid { grid-template-columns: repeat(4, 1fr); }
     }
-    @media (min-width: 1200px) {
-      .card-grid { grid-template-columns: repeat(5, 1fr); }
-    }
-    @media (min-width: 1400px) {
-      .card-grid { grid-template-columns: repeat(6, 1fr); }
-    }
     .card {
       background-color: #fff;
       border-radius: 8px;
@@ -70,7 +112,7 @@
     .card-image-container {
       position: relative;
       width: 100%;
-      padding-top: 100%; /* 1:1 Aspect Ratio */
+      padding-top: 100%;
     }
     .card-image {
       position: absolute;
@@ -136,13 +178,6 @@
       margin-bottom: 10px;
       color: #333;
     }
-    .header p {
-      font-size: 14px;
-      color: #666;
-    }
-    .hidden {
-      display: none !important;
-    }
     .total-count {
       text-align: center;
       margin-top: 10px;
@@ -150,13 +185,100 @@
       font-size: 14px;
       color: #666;
     }
+    .hidden {
+      display: none !important;
+    }
   </style>
 </head>
 <body>
+  <div class="sidebar left">
+    <h2>YouTube 동영상</h2>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=UKtQFeCWQ28" target="_blank">
+          <img src="https://i.ytimg.com/vi/UKtQFeCWQ28/mqdefault.jpg" alt="🚕 택시 타고 양산시민 삶 속으로! 🔥 체험 양산 삶의 현장, 택시기사 한옥문(1)">
+          <span>2025. 3. 28.</span>
+          <span>🚕 택시 타고 양산시민 삶 속으로! 🔥 체험 양산 삶의 현장, 택시기사 한옥문(1)</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=R8nGEIbDu_s" target="_blank">
+          <img src="https://i.ytimg.com/vi/R8nGEIbDu_s/mqdefault.jpg" alt="🔥 곽종근 녹취 & 홍장원 메모, 민주당이 조작한 증거로 헌재 탄핵심판 가능한가">
+          <span>2025. 3. 16.</span>
+          <span>🔥 곽종근 녹취 & 홍장원 메모, 민주당이 조작한 증거로 헌재 탄핵심판 가능한가</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=QSrKiHNFUU0" target="_blank">
+          <img src="https://i.ytimg.com/vi/QSrKiHNFUU0/mqdefault.jpg" alt="🔥 찢재명 대항마 조국 이낙연 나가리~ 잔챙이만 남은 민주당의 조기대선 '헛된 꿈' [월간 한옥문 3월호]">
+          <span>2025. 3. 11.</span>
+          <span>🔥 찢재명 대항마 조국 이낙연 나가리~ 잔챙이만 남은 민주당의 조기대선 '헛된 꿈' [월간 한옥문 3월호]</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=1U2oADpbeHU" target="_blank">
+          <img src="https://i.ytimg.com/vi/1U2oADpbeHU/mqdefault.jpg" alt="🔥 (경축) 윤석열 대통령 석방! 대통령 탄핵 기각 수순!! [월간 한옥문 3월호]">
+          <span>2025. 3. 7.</span>
+          <span>🔥 (경축) 윤석열 대통령 석방! 대통령 탄핵 기각 수순!! [월간 한옥문 3월호]</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=cJ6UkIUE3Ug" target="_blank">
+          <img src="https://i.ytimg.com/vi/cJ6UkIUE3Ug/mqdefault.jpg" alt="체험 양산 삶의 현장! 양산 원동 미나리 농장편 [양산 한옥문TV]">
+          <span>2025. 2. 21.</span>
+          <span>체험 양산 삶의 현장! 양산 원동 미나리 농장편 [양산 한옥문TV]</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=HEJM_5MJXXQ" target="_blank">
+          <img src="https://i.ytimg.com/vi/HEJM_5MJXXQ/mqdefault.jpg" alt="🔥 윤석열 대통령 지지율 51% 돌파! 국민 뜻 거스를 헌법재판관은 없다! [월간 한옥문 2월호]">
+          <span>2025. 2. 10.</span>
+          <span>🔥 윤석열 대통령 지지율 51% 돌파! 국민 뜻 거스를 헌법재판관은 없다! [월간 한옥문 2월호]</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=4Mi9EfWlGwg" target="_blank">
+          <img src="https://i.ytimg.com/vi/4Mi9EfWlGwg/mqdefault.jpg" alt="🔥 나도 알고 너도 알고 2030도 깨달았는데 도련님의 개딸들만 인지부조화ㅋㅋ [월간 한옥문 2월호]">
+          <span>2025. 2. 6.</span>
+          <span>🔥 나도 알고 너도 알고 2030도 깨달았는데 도련님의 개딸들만 인지부조화ㅋㅋ [월간 한옥문 2월호]</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=GIS3pr5vuvs" target="_blank">
+          <img src="https://i.ytimg.com/vi/GIS3pr5vuvs/mqdefault.jpg" alt="이재명 곧 나락간다~ 민주당 잡룡(雜龍)들 잔뜩 대기중ㅋㅋㅋ [월간 한옥문 설특집호]">
+          <span>2025. 2. 1.</span>
+          <span>이재명 곧 나락간다~ 민주당 잡룡(雜龍)들 잔뜩 대기중ㅋㅋㅋ [월간 한옥문 설특집호]</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=zNzuuKh0hiE" target="_blank">
+          <img src="https://i.ytimg.com/vi/zNzuuKh0hiE/mqdefault.jpg" alt="도련님이 전한길도 찢으려는 이유 😱 카톡도 검열하고~ 여론조사도 때려잡고~ [월간 한옥문 설특집호]">
+          <span>2025. 1. 29.</span>
+          <span>도련님이 전한길도 찢으려는 이유 😱 카톡도 검열하고~ 여론조사도 때려잡고~ [월간 한옥문 설특집호]</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=-by4wF7GPoI" target="_blank">
+          <img src="https://i.ytimg.com/vi/-by4wF7GPoI/mqdefault.jpg" alt="⚽️ 골 때리는 그 놈들 🔥 양산 최강 축구클럽을 가린다...는 핑계고 조기축구에서 결승골 넣은 썰 풀게요 [양산 한옥문TV]">
+          <span>2025. 1. 25.</span>
+          <span>⚽️ 골 때리는 그 놈들 🔥 양산 최강 축구클럽을 가린다...는 핑계고 조기축구에서 결승골 넣은 썰 풀게요 [양산 한옥문TV]</span>
+        </a>
+      </div>
+    
+  </div>
+
   <div class="container">
     <div class="header">
       <h1>한옥문 블로그</h1>
-      <p>네이버 블로그 포스트 모음</p>
     </div>
     
     <div class="filter-container">
@@ -177,8 +299,8 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">한옥문 예비후보 &amp;lsquo;퍼펙트 사송!&amp;rsquo; 공약 발표</h2>
-            <p class="card-description">&amp;ldquo;완성을 넘어 완벽한 사송 신도시를 조성하는데 모든 지원을 아끼지 않을 것입니다&amp;rdquo; 한옥문 국민의힘 양...</p>
+            <h2 class="card-title">한옥문 예비후보 &lsquo;퍼펙트 사송!&rsquo; 공약 발표</h2>
+            <p class="card-description">&ldquo;완성을 넘어 완벽한 사송 신도시를 조성하는데 모든 지원을 아끼지 않을 것입니다&rdquo; 한옥문 국민의힘 양...</p>
             <div class="card-meta">
               <span>2024년 2월 2일</span>
             </div>
@@ -196,8 +318,8 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">[NEWSIS] 한옥문, &#39;더 큰 양산 완성&#39;&amp;hellip;양산을 출마 공식화</h2>
-            <p class="card-description">&amp;amp;quot;책임정치와 지방이 존중받는 대한민국 만드는 데 앞장서겠다&amp;amp;quot; 다짐 [양산&amp;amp;#x3D;뉴시스] 안지율...</p>
+            <h2 class="card-title">[NEWSIS] 한옥문, '더 큰 양산 완성'&hellip;양산을 출마 공식화</h2>
+            <p class="card-description">&amp;quot;책임정치와 지방이 존중받는 대한민국 만드는 데 앞장서겠다&amp;quot; 다짐 [양산&amp;#x3D;뉴시스] 안지율...</p>
             <div class="card-meta">
               <span>2024년 1월 12일</span>
             </div>
@@ -234,8 +356,8 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">한옥문 국힘 양산을 당협위원장 &#39;붉은 지붕&#39; 출판기념회 &#39;성황&amp;rsquo;</h2>
-            <p class="card-description">내년 총선 출마를 공식화한 한옥문 국민의힘 양산시을 당협위원장이 저서 &amp;amp;#x27;붉은 지붕&amp;amp;#x27; 출판기념...</p>
+            <h2 class="card-title">한옥문 국힘 양산을 당협위원장 '붉은 지붕' 출판기념회 '성황&rsquo;</h2>
+            <p class="card-description">내년 총선 출마를 공식화한 한옥문 국민의힘 양산시을 당협위원장이 저서 &amp;#x27;붉은 지붕&amp;#x27; 출판기념...</p>
             <div class="card-meta">
               <span>2023년 12월 7일</span>
             </div>
@@ -272,8 +394,8 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">[브릿지경제] 한옥문 당협위원장 &amp;quot;양산 신규 아파트도 부실시공 전수조사 해야&amp;quot;</h2>
-            <p class="card-description">양산 사송 A-2&amp;middot;A-8 철근 누락 &amp;amp;#x27;부실시공&amp;amp;#x27; 1200여 세대 규모 아파트 단지 입주 예정 주민 불안 ...</p>
+            <h2 class="card-title">[브릿지경제] 한옥문 당협위원장 &quot;양산 신규 아파트도 부실시공 전수조사 해야&quot;</h2>
+            <p class="card-description">양산 사송 A-2&middot;A-8 철근 누락 &amp;#x27;부실시공&amp;#x27; 1200여 세대 규모 아파트 단지 입주 예정 주민 불안 ...</p>
             <div class="card-meta">
               <span>2023년 8월 28일</span>
             </div>
@@ -291,8 +413,8 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">한옥문 양산시(을) 당협위원장 &amp;quot;한국판 나사(NASA) 우주항공청 연내 개청 물 건너간 이유 심층 분석 &amp;quot;</h2>
-            <p class="card-description">윤석열 대통령의 대선 공약인 우주항공청 설립을 위해 이미 지난 4월 과학기술정보통신부가 &amp;amp;#x27;우주항공...</p>
+            <h2 class="card-title">한옥문 양산시(을) 당협위원장 &quot;한국판 나사(NASA) 우주항공청 연내 개청 물 건너간 이유 심층 분석 &quot;</h2>
+            <p class="card-description">윤석열 대통령의 대선 공약인 우주항공청 설립을 위해 이미 지난 4월 과학기술정보통신부가 &amp;#x27;우주항공...</p>
             <div class="card-meta">
               <span>2023년 8월 22일</span>
             </div>
@@ -310,7 +432,7 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">[브릿지경제] 한옥문 위원장, 밀어붙인 &#39;부울경 특별연합&#39;...&amp;quot;지역별 유불리 문제 생길 수밖에&amp;quot;</h2>
+            <h2 class="card-title">[브릿지경제] 한옥문 위원장, 밀어붙인 '부울경 특별연합'...&quot;지역별 유불리 문제 생길 수밖에&quot;</h2>
             <p class="card-description">부울경 메가시티 필요한 것 사실 민주당 일색으로 진행된 특별연합 시작부터 완성도 떨어진 출발 경제동맹 ...</p>
             <div class="card-meta">
               <span>2023년 8월 21일</span>
@@ -330,7 +452,7 @@
           </div>
           <div class="card-content">
             <h2 class="card-title">[경남열린신문] 국민의힘 양산시 을 한옥문 당협위원장, 유튜브 채널 개설</h2>
-            <p class="card-description">국민의힘 양산시 을 한옥문 당협위원장이 유튜브 채널 &amp;amp;#x27;쎈tv 한옥문을 열어라&amp;amp;#x27;를 개설하고 매주 ...</p>
+            <p class="card-description">국민의힘 양산시 을 한옥문 당협위원장이 유튜브 채널 &amp;#x27;쎈tv 한옥문을 열어라&amp;#x27;를 개설하고 매주 ...</p>
             <div class="card-meta">
               <span>2023년 8월 21일</span>
             </div>
@@ -348,7 +470,7 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">[양산신문] &amp;quot;진솔하고 겸허하게 시민 곁으로&amp;hellip;대민분야 강화 중점 당협 운영&amp;quot;</h2>
+            <h2 class="card-title">[양산신문] &quot;진솔하고 겸허하게 시민 곁으로&hellip;대민분야 강화 중점 당협 운영&quot;</h2>
             <p class="card-description">본지는 내년 4월 10일 실시되는 제22대 국회의원선거를 맞아 현역 국회의원과는 또 다른 관심의 대상이자 ...</p>
             <div class="card-meta">
               <span>2023년 8월 21일</span>
@@ -367,8 +489,8 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">[브릿지경제] 한옥문 위원장 &amp;quot;산업은행은 신호탄...경남도 2차 공공기관 이전 총력 대응해야&amp;quot;</h2>
-            <p class="card-description">동남권 산업구조 재편 위해 중소기업은행&amp;middot;한국공항공사&amp;middot;마사회 유치 필수 국민의힘 한옥문 양산을 당협위원...</p>
+            <h2 class="card-title">[브릿지경제] 한옥문 위원장 &quot;산업은행은 신호탄...경남도 2차 공공기관 이전 총력 대응해야&quot;</h2>
+            <p class="card-description">동남권 산업구조 재편 위해 중소기업은행&middot;한국공항공사&middot;마사회 유치 필수 국민의힘 한옥문 양산을 당협위원...</p>
             <div class="card-meta">
               <span>2023년 8월 21일</span>
             </div>
@@ -386,7 +508,7 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">[경남열린신문] 한옥문 국민의힘양산시을 당협위원원 한옥문을열어라! &amp;quot;웅상선 광역철도, 양산 미래 확 바꿀 엄청난 지역 사업&amp;quot;</h2>
+            <h2 class="card-title">[경남열린신문] 한옥문 국민의힘양산시을 당협위원원 한옥문을열어라! &quot;웅상선 광역철도, 양산 미래 확 바꿀 엄청난 지역 사업&quot;</h2>
             <p class="card-description">양산시 웅상읍지역의 지세는 평면적으로 거의 원형을 이루고 있으며 부산(釜山)과 울산(蔚山)을 연결하는 7...</p>
             <div class="card-meta">
               <span>2023년 8월 21일</span>
@@ -406,7 +528,7 @@
           </div>
           <div class="card-content">
             <h2 class="card-title">[울산신문] 국민의힘 양산시(을)당협, 농촌지역 일손돕기 펼쳐</h2>
-            <p class="card-description">동면 창기마을, 당근 양파 수확 일손 보태 농산물 가격 형성&amp;middot;유통 경로 등 농가 의견 청취 한옥문 위원장 &amp;amp;...</p>
+            <p class="card-description">동면 창기마을, 당근 양파 수확 일손 보태 농산물 가격 형성&middot;유통 경로 등 농가 의견 청취 한옥문 위원장 &amp;...</p>
             <div class="card-meta">
               <span>2023년 8월 21일</span>
             </div>
@@ -424,8 +546,8 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">[브릿지경제] 한옥문 위원장 &amp;quot;양산 폐배터리 자원화 산업 선점해 미래 등불 밝혀야&amp;quot;</h2>
-            <p class="card-description">폐배터리 자원화 산업, 물류&amp;middot;재재조&amp;middot;광물업 확장 가능성 많아 산업전망보고서 공개 잇따라...대기업 등 폐...</p>
+            <h2 class="card-title">[브릿지경제] 한옥문 위원장 &quot;양산 폐배터리 자원화 산업 선점해 미래 등불 밝혀야&quot;</h2>
+            <p class="card-description">폐배터리 자원화 산업, 물류&middot;재재조&middot;광물업 확장 가능성 많아 산업전망보고서 공개 잇따라...대기업 등 폐...</p>
             <div class="card-meta">
               <span>2023년 8월 21일</span>
             </div>
@@ -443,7 +565,7 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">[경남열린신문] 한옥문 양산시 &#39;을&#39; 당협위원장, &#39; 한옥문을 열어라 &#39;광역도시철도 웅상선은 어디쯤 오고 있나</h2>
+            <h2 class="card-title">[경남열린신문] 한옥문 양산시 '을' 당협위원장, ' 한옥문을 열어라 '광역도시철도 웅상선은 어디쯤 오고 있나</h2>
             <p class="card-description">부산-양산-울산 광역철도(이하 웅상선)의 제1차 예비타당성(이하 예타)조사에서 대상사업으로 최종 선정됐...</p>
             <div class="card-meta">
               <span>2023년 8월 21일</span>
@@ -463,7 +585,7 @@
           </div>
           <div class="card-content">
             <h2 class="card-title">[경남열린신문] 한옥문 국민의힘 양산시(을) 당협위원장, 청년 일자리 창출에 전력을 다하라!</h2>
-            <p class="card-description">경남도민 대통합시대를 열 &amp;amp;#x27;경상남도 사회대통합위원회&amp;amp;#x27;(이하 통합위)가 출범했다. 통합위는 박...</p>
+            <p class="card-description">경남도민 대통합시대를 열 &amp;#x27;경상남도 사회대통합위원회&amp;#x27;(이하 통합위)가 출범했다. 통합위는 박...</p>
             <div class="card-meta">
               <span>2023년 8월 21일</span>
             </div>
@@ -482,7 +604,7 @@
           </div>
           <div class="card-content">
             <h2 class="card-title">[경남도민신문] 국민의힘 양산시을당협 당원대회 600여명 운집</h2>
-            <p class="card-description">한옥문 위원장 체제 후 첫 공식 행사 개최 윤영석&amp;middot;장제원&amp;middot;윤희숙 한목소리 총선 승리 호소 지난 1월 한옥문...</p>
+            <p class="card-description">한옥문 위원장 체제 후 첫 공식 행사 개최 윤영석&middot;장제원&middot;윤희숙 한목소리 총선 승리 호소 지난 1월 한옥문...</p>
             <div class="card-meta">
               <span>2023년 8월 21일</span>
             </div>
@@ -500,8 +622,8 @@
             <div class="card-rss-title">양산 한옥문</div>
           </div>
           <div class="card-content">
-            <h2 class="card-title">[브릿지경제] 양산시 한옥문 당협위원장 &amp;quot;양산 신규 아파트도 부실시공 전수조사 해야&amp;quot;</h2>
-            <p class="card-description">양산 사송 A-2&amp;middot;A-8 철근 누락 &amp;amp;#x27;부실시공&amp;amp;#x27; 1200여 세대 규모 아파트 단지 입주 예정 주민 불안 ...</p>
+            <h2 class="card-title">[브릿지경제] 양산시 한옥문 당협위원장 &quot;양산 신규 아파트도 부실시공 전수조사 해야&quot;</h2>
+            <p class="card-description">양산 사송 A-2&middot;A-8 철근 누락 &amp;#x27;부실시공&amp;#x27; 1200여 세대 규모 아파트 단지 입주 예정 주민 불안 ...</p>
             <div class="card-meta">
               <span>2023년 8월 21일</span>
             </div>
@@ -514,6 +636,92 @@
     
     </div>
   </div>
+
+  <div class="sidebar right">
+    <h2>YouTube 쇼츠</h2>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=leuCjSuS4MY" target="_blank">
+          <img src="https://i.ytimg.com/vi/leuCjSuS4MY/mqdefault.jpg" alt="이재명은 욕하지 않았습니다 #이재명 #도련님 #숨쉬었습니다 #아름다운남자 #시벨럼 #산불 #shorts">
+          <span>2025. 3. 29.</span>
+          <span>이재명은 욕하지 않았습니다 #이재명 #도련님 #숨쉬었습니다 #아름다운남자 #시벨럼 #산불 #shorts</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=vFxWOOldZAk" target="_blank">
+          <img src="https://i.ytimg.com/vi/vFxWOOldZAk/mqdefault.jpg" alt="가식과 진심의 차이 #양산한옥문 #찢재명 #도련님 #이재명 #한옥문 #shorts">
+          <span>2025. 3. 25.</span>
+          <span>가식과 진심의 차이 #양산한옥문 #찢재명 #도련님 #이재명 #한옥문 #shorts</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=kQMyAVkQL6w" target="_blank">
+          <img src="https://i.ytimg.com/vi/kQMyAVkQL6w/mqdefault.jpg" alt="킹갓제네랄 대석열 석방 #양산한옥문 #shorts #윤석열대통령 #석방">
+          <span>2025. 3. 9.</span>
+          <span>킹갓제네랄 대석열 석방 #양산한옥문 #shorts #윤석열대통령 #석방</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=Uvst_N156Ts" target="_blank">
+          <img src="https://i.ytimg.com/vi/Uvst_N156Ts/mqdefault.jpg" alt="윤석열 대통령 절대 석방 안된다는 유시민 #맨날틀림 #다틀림 #뇌썩남 #유시민 #shorts">
+          <span>2025. 3. 8.</span>
+          <span>윤석열 대통령 절대 석방 안된다는 유시민 #맨날틀림 #다틀림 #뇌썩남 #유시민 #shorts</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=-LeFACkDqSg" target="_blank">
+          <img src="https://i.ytimg.com/vi/-LeFACkDqSg/mqdefault.jpg" alt="[나는 절로] 법산큰스님을 당황하게 한 대학교수 #양산통도사 #법산스님 #양산한옥문 #shorts #나는절로">
+          <span>2025. 3. 7.</span>
+          <span>[나는 절로] 법산큰스님을 당황하게 한 대학교수 #양산통도사 #법산스님 #양산한옥문 #shorts #나는절로</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=BJVvrUsHV4M" target="_blank">
+          <img src="https://i.ytimg.com/vi/BJVvrUsHV4M/mqdefault.jpg" alt="[나는 절로] 학교가 너무 가고싶었던 스님의 어린시절 #법산스님 #양산한옥문 #양산통도사 #shorts #나는절로">
+          <span>2025. 3. 5.</span>
+          <span>[나는 절로] 학교가 너무 가고싶었던 스님의 어린시절 #법산스님 #양산한옥문 #양산통도사 #shorts #나는절로</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=0tFbBdZSDcI" target="_blank">
+          <img src="https://i.ytimg.com/vi/0tFbBdZSDcI/mqdefault.jpg" alt="50대 아저씨들은 미나리하면 뭐가 생각날까? #양산한옥문 #양산원동미나리축제 #터미널 #shorts">
+          <span>2025. 2. 20.</span>
+          <span>50대 아저씨들은 미나리하면 뭐가 생각날까? #양산한옥문 #양산원동미나리축제 #터미널 #shorts</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=oUw6hU6xID4" target="_blank">
+          <img src="https://i.ytimg.com/vi/oUw6hU6xID4/mqdefault.jpg" alt="공산당 특, 맘에 안들면 위원회 만들어서 족쳐버림 #더불어민주당 #찢재명 #도련님 #shorts">
+          <span>2025. 2. 10.</span>
+          <span>공산당 특, 맘에 안들면 위원회 만들어서 족쳐버림 #더불어민주당 #찢재명 #도련님 #shorts</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=5xjDvgglArQ" target="_blank">
+          <img src="https://i.ytimg.com/vi/5xjDvgglArQ/mqdefault.jpg" alt="🔥 투명하디 투명한 이재명의 민주당... 민주당의 목표는 단 하나 #도련님 #찢재명 #한옥문 #shorts">
+          <span>2025. 2. 6.</span>
+          <span>🔥 투명하디 투명한 이재명의 민주당... 민주당의 목표는 단 하나 #도련님 #찢재명 #한옥문 #shorts</span>
+        </a>
+      </div>
+    
+      <div class="sidebar-item">
+        <a href="https://www.youtube.com/watch?v=-iaQ8iDa0yI" target="_blank">
+          <img src="https://i.ytimg.com/vi/-iaQ8iDa0yI/mqdefault.jpg" alt="김정은도 한 수 배운다는 도련님의 검열스타일 #도련님 #거기는찢지말아주세요 #양산한옥문 #shorts">
+          <span>2025. 2. 6.</span>
+          <span>김정은도 한 수 배운다는 도련님의 검열스타일 #도련님 #거기는찢지말아주세요 #양산한옥문 #shorts</span>
+        </a>
+      </div>
+    
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var images = document.querySelectorAll('.card-image');
